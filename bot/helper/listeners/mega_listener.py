@@ -1,4 +1,4 @@
-from threading import Event
+from threading import EventMore actions
 
 from mega import (
     MegaApi,
@@ -183,7 +183,7 @@ class MegaAppListener(MegaListener):
         ):
         LOGGER.error(f"Mega download error in file {transfer.getFileName()}: {error}")
         if transfer.getState() in [
-            1,
+            1,More actions
             4
         ]:
             return
