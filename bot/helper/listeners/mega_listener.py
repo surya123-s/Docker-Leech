@@ -183,7 +183,7 @@ class MegaAppListener(MegaListener):
         ):
         LOGGER.error(f"Mega download error in file {transfer.getFileName()}: {error}")
         if transfer.getState() in [
-            1,More actions
+            1,
             4
         ]:
             return
