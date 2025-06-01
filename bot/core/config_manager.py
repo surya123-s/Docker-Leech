@@ -236,7 +236,7 @@ class Config:
 
 class BinConfig:
     ARIA2_NAME = "fastfetcher"
-    QBIT_NAME = "torrentgod"
+    QBIT_NAME = "torrentmaster"
     FFMPEG_NAME = "videomancer"
     RCLONE_NAME = "cloudsweep"
     SABNZBD_NAME = "newsgator"
