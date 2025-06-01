@@ -6,7 +6,6 @@ anytree
 apscheduler
 aioaria2
 aioqbt
-cinemagoer
 cloudscraper
 dnspython
 fastapi
@@ -19,12 +18,12 @@ httpx
 langcodes
 jinja2
 lxml
+#https://github.com/Hrishi2861/mega-sdk-py-4.8.0/raw/refs/heads/main/megasdk-4.8.0-py2.py3-none-any.whl
 motor
 natsort
 par2cmdline-turbo
 pillow
 psutil
-pycountry
 pymongo
 pyrofork==2.2.11
 python-magic
@@ -34,7 +33,7 @@ requests
 speedtest-cli
 telegraph
 tenacity
-tgcrypto
+#tgcrypto
 urllib3
 uvicorn
 uvloop
