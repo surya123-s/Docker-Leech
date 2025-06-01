@@ -1,4 +1,4 @@
-from threading import EventMore actions
+from threading import Event
 
 from mega import (
     MegaApi,
