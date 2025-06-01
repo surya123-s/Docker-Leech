@@ -1,4 +1,4 @@
-from secrets import token_urlsafeMore actions
+from secrets import token_urlsafe
 from aiofiles.os import makedirs
 
 from mega import MegaApi
