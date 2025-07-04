@@ -330,18 +330,25 @@ class TelegramUploader:
             for file_ in natsorted(files):
                 self._error = ""
                 self._up_path = f_path = ospath.join(dirpath, file_)
+                # Filter: skip zero-byte, .getxfer.*.mega, and hidden files
+                skip_file = False
                 if not await aiopath.exists(self._up_path):
-                    LOGGER.error(f"{self._up_path} not exists! Continue uploading!")
+                    skip_file = True
+                elif file_.startswith('.'):
+                    skip_file = True
+                elif '.getxfer' in file_ and file_.endswith('.mega'):
+                    skip_file = True
+                if skip_file:
+                    LOGGER.warning(f"Skipping unwanted file: {self._up_path}")
                     continue
                 try:
                     f_size = await aiopath.getsize(self._up_path)
-                    self._total_files += 1
                     if f_size == 0:
-                        LOGGER.error(
-                            f"{self._up_path} size is zero, telegram don't upload zero size files"
-                        )
+                        LOGGER.warning(f"Skipping zero-size file: {self._up_path}")
                         self._corrupted += 1
+                        await remove(self._up_path)
                         continue
+                    self._total_files += 1
                     if self._listener.is_cancelled:
                         return
                     cap_mono = await self._prepare_file(file_, dirpath)
