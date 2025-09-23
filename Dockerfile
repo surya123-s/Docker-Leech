@@ -25,8 +25,8 @@ ENV LEECH_DUMP_CHAT=""
 ENV TELEGRAM_HASH=""
 ENV DATABASE_URL=""
 
-# Expose ports
-EXPOSE 80 8080 8090 3129
+# Expose ports # The 3129 Port is for JDownload-Manager-WebUI 
+EXPOSE 80 8080 3129
 
 # Start script
 CMD ["bash", "start.sh"]
