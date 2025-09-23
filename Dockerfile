@@ -4,8 +4,11 @@ FROM downloaderzone/wzmlx:v3
 WORKDIR /usr/src/app
 RUN chmod 777 /usr/src/app
 
-# Install ffmpeg
-RUN apt-get update && apt-get install -y ffmpeg && rm -rf /var/lib/apt/lists/*
+# Install ffmpeg and added symlinks
+RUN apt-get update && apt-get install -y ffmpeg && rm -rf /var/lib/apt/lists/* \
+ && mkdir -p /JDownloader/tools/linux/ffmpeg/x64 \
+ && ln -sf /usr/bin/ffmpeg /JDownloader/tools/linux/ffmpeg/x64/ffmpeg \
+ && ln -sf /usr/bin/ffprobe /JDownloader/tools/linux/ffmpeg/x64/ffprobe
 
 # Create virtual environment (with system site packages)
 RUN uv venv --system-site-packages
