@@ -30,7 +30,7 @@ ENV LEECH_DUMP_CHAT=""
 ENV TELEGRAM_HASH=""
 ENV DATABASE_URL=""
 
-# Expose ports
+# Expose ports #3129 for jd
 EXPOSE 80 8080 8090
 
 # Start script
