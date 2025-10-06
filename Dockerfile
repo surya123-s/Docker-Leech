@@ -31,7 +31,7 @@ ENV TELEGRAM_HASH=""
 ENV DATABASE_URL=""
 
 # Expose ports
-EXPOSE 80 8080 3129
+EXPOSE 80 8080 8090
 
 # Start script
 CMD ["bash", "start.sh"]
